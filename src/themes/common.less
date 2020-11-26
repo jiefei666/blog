@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'ScaryGhost';
+  src: url('~@/assets/font/AlexBrush-Regular.ttf'); /* IE9+ */
+}
+
+body,
+html {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: '';
+  color: @color-gray;
+  *::selection {
+    color: @color-blue;
+    background: @white;
+  }
+}
+
+// 左右居中
+.horizontally {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+// 居中(目作用于子元素)
+.p-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 居中(目作用于子元素)
+.d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+//单行溢出小圆点代替
+.overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+//多行溢出小圆点代替
+.mutil-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  @media screen and (max-width: 576px) {
+    width: 90%;
+  }
+  @media screen and (min-width: 576px) {
+    width: 540px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 720px;
+  }
+  @media screen and (min-width: 992px) {
+    width: 960px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 63%;
+  }
+}

@@ -1,0 +1,84 @@
+@import './themes.less';
+
+// .colors
+//   (
+//     @color: initial,
+//     @border-color: initial,
+//     @bg-color: initial,
+//     @placeholder-color: initial,
+//     @link-color: initial,
+//   ) {
+//   body[data-theme='light'] & {
+//     color: @themes[ @light] [ @@color];
+//     border-color: @themes[ @light] [ @@border-color];
+//     background-color: @themes[ @light] [ @@bg-color];
+//     &:hover {
+//       color: @themes[ @light] [ @@link-color];
+//     }
+//     &::placeholder {
+//       color: @themes[ @light] [ @@placeholder-color];
+//     }
+//   }
+//   body[data-theme='dark'] & {
+//     color: @themes[ @dark] [ @@color];
+//     border-color: @themes[ @dark] [ @@border-color];
+//     background-color: @bg-color;
+//     &:hover {
+//       color: @link-color;
+//     }
+//     &::placeholder {
+//       color: @placeholder-color;
+//     }
+//   }
+// }
+
+#colors() {
+  .text(@color: text-color-default) {
+    body[data-theme='light'] & {
+      color: @themes[ @light] [ @@color];
+    }
+    body[data-theme='dark'] & {
+      color: @themes[ @dark] [ @@color];
+    }
+  }
+  .border(@border-color: border-color-default) {
+    body[data-theme='light'] & {
+      border: 1px solid @themes[ @light] [ @@border-color];
+    }
+    body[data-theme='dark'] & {
+      border: 1px solid @themes[ @dark] [ @@border-color];
+    }
+  }
+  .background(@bg-color: background-color-default) {
+    body[data-theme='light'] & {
+      background-color: @themes[ @light] [ @@bg-color];
+    }
+    body[data-theme='dark'] & {
+      color: @themes[ @dark] [ @@bg-color];
+    }
+  }
+  .link(@link-color: link-color) {
+    body[data-theme='light'] & {
+      &:hover {
+        color: @themes[ @light] [ @@link-color];
+      }
+    }
+    body[data-theme='dark'] & {
+      &:hover {
+        color: @themes[ @light] [ @@link-color];
+      }
+    }
+  }
+  .placeholder(@placeholder-color: placeholder-color-default) {
+    body[data-theme='light'] & {
+      &::placeholder {
+        color: @themes[ @light] [ @@placeholder-color];
+      }
+    }
+    body[data-theme='dark'] & {
+      &::placeholder {
+        color: @themes[ @light] [ @@placeholder-color];
+      }
+    }
+  }
+}
